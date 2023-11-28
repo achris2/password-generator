@@ -91,16 +91,18 @@ var upperCasedCharacters = [
 // Function to prompt user for password options
 function getPasswordOptions() {
   // initialise passwordLength
-  var passwordLength = 0; 
-  while (true){
-  passwordLength = prompt ("Please enter the desired password lenght. It MUST be between 8 and 128 characters");
-  if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128){
-    break;
-  } else {
-    alert ("Please enter a length between 8 and 128 characters")
+  var passwordLength;
+
+  // Validate and get password length
+  while (true) {
+    passwordLength = prompt("Enter the length of your password (between 8 and 128 characters):");
+
+    if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
+      break;
+    } else {
+      alert("Please enter a valid number between 8 and 128.");
+    }
   }
-}
-}
   // check character types
 
   var lowerCase = confirm("Include lowercase characters?");
@@ -109,20 +111,23 @@ function getPasswordOptions() {
   var special = confirm ("Include special characters?")
 
   // validate that 1 character type is selected
-
   if (!(lowerCase || upperCase || numeric || special)) {
-    alert("You must select at least one character option in the password. Please try again");
+    alert("Please select at least one character type.");
+    return null;
   }
 
   // store user preferences 
 
   var passwordOptions = {
-    length: parseInt(passwordLength), 
-    lowerCase: lowerCase, 
+    length: parseInt(passwordLength),
+    lowerCase: lowerCase,
     upperCase: upperCase,
     numeric: numeric,
-    special: special, 
-  }; 
+    special: special
+  };
+
+  return passwordOptions;
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -135,18 +140,23 @@ function generatePassword() {
   // Get password options from the user 
   var passwordOptions = getPasswordOptions();
 
+// return an empty string if user provides invalid input 
+  if (!passwordOptions) {
+    return ''; 
+  }
+
   // combine selected characters 
   var combinedChars = '';
-  if (passwordOptions.lowerCase === true) { 
+  if (passwordOptions.lowerCase) {
     combinedChars += lowerCasedCharacters.join('');
   }
-  if (passwordOptions.upperCase === true){
+  if (passwordOptions.upperCase) {
     combinedChars += upperCasedCharacters.join('');
   }
-  if (passwordOptions.numeric === true){
+  if (passwordOptions.numeric) {
     combinedChars += numericCharacters.join('');
   }
-  if (passwordOptions.special === true){
+  if (passwordOptions.special) {
     combinedChars += specialCharacters.join('');
   }
 
@@ -157,7 +167,6 @@ function generatePassword() {
   }
 
   return generatedPassword;
-
 }
 
 // Get references to the #generate element
@@ -168,6 +177,6 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
   passwordText.value = password;
-
+}
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
