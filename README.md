@@ -1,39 +1,39 @@
 ## Password Generator
 
-## Bootstrap Portfolio
-
 
 ## Link to Live Website
-https://achris2.github.io/Bootstrap-Portfolio/index.html
+https://achris2.github.io/password-generator/index.html
 
 ## Description
 
-This project is about developing a portfolio website using a CSS framework, Bootstrap. 
+This project is about building a Password Generator using vanilla Javascript. 
 
-It's a small start, but hopefully this is an evergreen project, complementing my previous Portfolio but now including Bootstrap. 
+You can use this generator to generate a random password based on your preferences. 
 
 ## Installation
-No installation required. You will be able to access the website through the following link:
+No installation required. You will be able to use the password generator using the following link:
 
-https://achris2.github.io/alex-portfolio/index.html
+https://achris2.github.io/password-generator/index.html
 
 ## Usage
 
-Navigate using your browser, click on the links to be taken to the specific sections. 
+1. Navigate using your browser
+2. Click on 'Generate Password'
+3. Enter the number of characters and your preferences
+4. Get your generated random password   
 
-I only really have one project live, with the others being place holders. 
-
-Disclaimer: I did not build Netflix, please read the description, it is only a website I *wish* I made. 
 
 ## Screenshot
 
 ```md
-![alt text](../Bootstrap-Portfolio/images/screenshot-latest.png)
+![alt text](../password-generator/assets/screenshot.png)
 ```
 
 ## Credits
 
-I've coded all of it myself. Occasional Googling and consulting StackOverflow and Bootstrap documentation occured. 
+The HTML and CSS come from the bootcamp starter code. 
+
+I've coded all of the myself, but I have also Googled and consulted websites like StackOverflow. 
 
 ## License
 MIT License
