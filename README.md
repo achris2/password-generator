@@ -26,7 +26,7 @@ https://achris2.github.io/password-generator/index.html
 ## Screenshot
 
 ```md
-![alt text](../password-generator/assets/screenshot.png)
+![alt text](https://raw.githubusercontent.com/achris2/password-generator/main/assets/screenshot.png)
 ```
 
 ## Credits
