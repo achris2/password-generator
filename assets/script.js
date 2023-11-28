@@ -92,9 +92,10 @@ var upperCasedCharacters = [
 function getPasswordOptions() {
   // initialise passwordLength
   var passwordLength = 0; 
+  while (true){
   passwordLength = prompt ("Please enter the desired password lenght. It MUST be between 8 and 128 characters");
-  if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
-    break; 
+  if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128){
+    break;
   } else {
     alert ("Please enter a length between 8 and 128 characters")
   }
