@@ -90,6 +90,40 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  // initialise passwordLength
+  var passwordLength = 0; 
+  passwordLength = prompt ("Please enter the desired password lenght. It MUST be between 8 and 128 characters");
+  if (!isNaN(passwordLength) && passwordLength >= 8 && passwordLength <= 128) {
+    break; 
+  } else {
+    alert ("Please enter a length between 8 and 128 characters")
+  }
+
+  // check character types
+
+  var lowerCase = confirm("Include lowercase characters?");
+  var upperCase = confirm("Include uppercase characters?");
+  var numeric = confirm("Include numeric characters?");
+  var special = confirm ("Include special characters?")
+
+  // validate that 1 character type is selected
+
+  if (!(lowerCase || upperCase || numeric || special)) {
+    alert("You must select at least one character option in the password. Please try again");
+    return null;
+  }
+
+  // store user preferences 
+
+  var passwordOptions = {
+    length: parseInt(passwordLength), 
+    lowerCase: lowerCase, 
+    upperCase: upperCase,
+    numeric: numeric,
+    special: special, 
+  }; 
+
+  return passwordOptions
 
 }
 
